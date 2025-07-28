@@ -1,0 +1,37 @@
+#Explicacion paso a paso 
+
+#2.
+#Con touch creo el archivo ".txt"
+
+touch seguimiento1_vombat_ursinus.txt
+
+#Descarga del archivo de mi organismo llamado Vombatus Ursinus
+#Uso el comando "curl" (client URL) que me permite transferirdatos desde o hacia un servidor y lo uso con el parametro "-o" para guardarlo con un nombre distinto (seguimiento1)
+
+curl -o seguimiento1.gff3.gz https://ftp.ensembl.org/pub/current_gff3/vombatus_ursinus/Vombatus_ursinus.bare-nosed_wombat_genome_assembly.114.gff3.gz
+
+#Descomprimo el archivo con "gunzip" que es especifico para archivos que terminan en ".gz"
+
+gunzip seguimiento1.gff3.gz
+
+#Ahora uso "ls -l" que me muestra los archivos que hay en la carpeta donde estoy parado con mas detalles
+
+ls -l
+
+#3.
+#Para saber el numero de features contiene el archivo use el comando "grep" con el parametro "-v" seguido de "^#" para que lea el archivo sin los comentarios (da como respuesta 926093)
+
+grep -v "^#" seguimiento1.gff3 | wc -l
+
+#Para contar las regiones de secuencia uso "grep" seguido de "^##sequence-region"", esto me ayuda a filtrar lineas que indican regiones cromosomicas y despues pongo "wc -l" para que si me las cuente
+
+grep '^##sequence-region' seguimiento1.gff3 | wc -l
+
+#para contar cuantos genes estan listados, utilizo "grep" con su parametro "-p" que me ayuda a ser mas especifico en mi busqueda para luego poder poner "\tgene\t" que esto hace que esta busqueda se aplique a la columna 3 ya que este archivo esta separado por tabulaciones. Luego uso otra vez grep con parametro "-v" seguido de "^#" para vitar lineas comentadas y despues "wc -l" para contar las lineas que cumplan con esto
+
+grep -P '\tgene\t' seguimiento1.gff3 | grep -v '^#' | wc -l
+
+# para sacar el top 10 de features de la columna 3 use el "cut" con su parametro "-f3", luego el "grep -v" seguido de "^#" para que no cuente lineas que empiecen por eso, luego uso "sort" solo para que lo organice alfabeticamente antes de contar, seguido de "uniq -c" para que cuente cuantas veces aparece cada tipo, despues un "sort -nr" para ver mejor la info ya que esto me lo pone de mayor a menor y por ultimo "head 10" para que solo aparescan top 10
+
+cut -f3 seguimiento1.gff3 | grep -v '^#' | sort | uniq -c | sort -nr | head -10
+

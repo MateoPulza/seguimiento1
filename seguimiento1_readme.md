@@ -59,6 +59,7 @@ Referencia: https://www.nationalgeographic.com.es/mundo-animal/wombats_19171
 - ¿Cuantos features contiene el archivo? R/= 926093
 - ¿Cuantas regiones de la secuencia (cromosomas) contiene el archivo? R/= 15416
 - ¿Cuántos genes están listados en el organismo? R/= 25099
+   -    
 - ¿Cuál es el top 10 de tipo de features (columna 3 más anotados en el 
 genoma?
 

@@ -1,4 +1,4 @@
-# Respuestas
+## Respuestas
 
 ##1a. Describa los campos que se encontrará en este tipo de archivos. ¿Qué información está allí contenida? Proporcione ejemplos.##
 

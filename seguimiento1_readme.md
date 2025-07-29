@@ -59,7 +59,12 @@ Referencia: https://www.nationalgeographic.com.es/mundo-animal/wombats_19171
 - ¿Cuantos features contiene el archivo? R/= 926093
 - ¿Cuantas regiones de la secuencia (cromosomas) contiene el archivo? R/= 15416
 - ¿Cuántos genes están listados en el organismo? R/= 25099
-   -    
+   - 21201 gene (Gen codificante común.)
+   - 3318 ncRNA_gene (Gen de ARN no codificante.)
+   - 577 pseudogene (Gen inactivo o "muerto".)
+   - 2 V_gene_segment (Segmento génico variable del sistema inmune.)
+   - 1 J_gene_segment (Segmento génico de unión (Joining).)
+     
 - ¿Cuál es el top 10 de tipo de features (columna 3 más anotados en el 
 genoma?
 

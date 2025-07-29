@@ -27,9 +27,9 @@ grep -v "^#" seguimiento1.gff3 | wc -l
 
 grep '^##sequence-region' seguimiento1.gff3 | wc -l
 
-#para contar cuantos genes estan listados, utilizo "grep" con su parametro "-p" que me ayuda a ser mas especifico en mi busqueda para luego poder poner "\tgene\t" que esto hace que esta busqueda se aplique a la columna 3 ya que este archivo esta separado por tabulaciones. Luego uso otra vez grep con parametro "-v" seguido de "^#" para vitar lineas comentadas y despues "wc -l" para contar las lineas que cumplan con esto
+#para contar cuantos genes estan listados, utilizo "grep" con su parametro "-v" que me ayuda a no tener en cuenta los comentarios en mi busqueda para luego poder poner "cut -f3" que esto hace que me extraiga la columna 3 ya que en este archivo esa informacion esta ahi. Luego uso otra vez "grep "gene" " para en esa columna me busque todo lo que tenga esta palabra, un "sort" que me ordena alfabeticamente para el conteo, luego un "uniq -c" que me cuenta cuantas veces aparece cada tipo, por ultimo otro "sort -r" que me ordena numericamente de ascendente a descendente   
 
-grep -P '\tgene\t' seguimiento1.gff3 | grep -v '^#' | wc -l
+grep -v '^#' seguimiento1.gff3 | cut -f3 | grep 'gene' | sort | uniq -c | sort -r
 
 # para sacar el top 10 de features de la columna 3 use el "cut" con su parametro "-f3", luego el "grep -v" seguido de "^#" para que no cuente lineas que empiecen por eso, luego uso "sort" solo para que lo organice alfabeticamente antes de contar, seguido de "uniq -c" para que cuente cuantas veces aparece cada tipo, despues un "sort -nr" para ver mejor la info ya que esto me lo pone de mayor a menor y por ultimo "head 10" para que solo aparescan top 10
 

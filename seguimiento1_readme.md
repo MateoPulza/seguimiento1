@@ -58,7 +58,7 @@ Referencia: https://www.nationalgeographic.com.es/mundo-animal/wombats_19171
 ##3b. Investigue, usando las herramientas de la línea de comandos de Unix, y conteste las siguientes preguntas:
 - ¿Cuantos features contiene el archivo? R/= 926093
 - ¿Cuantas regiones de la secuencia (cromosomas) contiene el archivo? R/= 15416
-- ¿Cuántos genes están listados en el organismo? R/= 21201
+- ¿Cuántos genes están listados en el organismo? R/= 25099
 - ¿Cuál es el top 10 de tipo de features (columna 3 más anotados en el 
 genoma?
 
